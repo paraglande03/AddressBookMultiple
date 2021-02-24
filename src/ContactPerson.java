@@ -45,6 +45,34 @@ public class ContactPerson {
         return zip;
     }
 
+    public void setFname(String fname) {
+        this.fname = fname;
+    }
+
+    public void setLname(String lname) {
+        this.lname = lname;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setPhonenumber(long phonenumber) {
+        this.phonenumber = phonenumber;
+    }
+
+    public void setZip(long zip) {
+        this.zip = zip;
+    }
+
     public String toString(){
         return "name: "+fname+ " "+lname+", Address: "+address+",  City: "+city+",  State: "+state+",  Pin Code: "+zip+",  Phone Number: "+phonenumber+"|";
     }
