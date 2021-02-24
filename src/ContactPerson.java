@@ -1,83 +1,92 @@
-public class ContactPerson {
+import java.util.Comparator;
 
-    private String fname;
-    private String lname;
+public class ContactPerson {
+    private String firstName;
+    private String lastName;
     private String address;
     private String city;
     private String state;
-    private long phonenumber;
+    private long phoneNumber;
     private long zip;
-//    constructor
-    public ContactPerson(String fname,String lname,String address,String city,String state, long zip, long phonenumber){
-        this.fname=fname;
-        this.lname=lname;
-        this.address=address;
-        this.city=city;
-        this.state=state;
-        this.zip=zip;
-        this.phonenumber=phonenumber;
+
+    public ContactPerson(String firstName, String lastName, String address, String city, String state, long zip, long phoneNumber) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.phoneNumber = phoneNumber;
+        this.zip = zip;
     }
-// getters
-    public String getfname(){
-        return fname;
+
+    public String getfirstName() {
+        return firstName;
     }
-    public String getlname(){
-        return lname;
+
+    public String getlastName() {
+        return lastName;
     }
+
 
     public String getAddress() {
         return address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getState() {
-        return state;
-    }
-
-    public long getPhonenumber() {
-        return phonenumber;
-    }
-
-    public long getZip() {
-        return zip;
-    }
-
-    public void setfname(String fname) {
-        this.fname = fname;
-    }
-
-    public void setlname(String lname) {
-        this.lname = lname;
     }
 
     public void setAddress(String address) {
         this.address = address;
     }
 
+    public String getCity() {
+        return city;
+    }
+
     public void setCity(String city) {
         this.city = city;
+    }
+
+    public String getState() {
+        return state;
     }
 
     public void setState(String state) {
         this.state = state;
     }
 
-    public void setPhonenumber(long phonenumber) {
-        this.phonenumber = phonenumber;
+    public long getZip() {
+        return zip;
     }
 
     public void setZip(long zip) {
         this.zip = zip;
     }
 
-    public String toString(){
-        return "name: "+fname+ " "+lname+", Address: "+address+",  City: "+city+",  State: "+state+",  Pin Code: "+zip+",  Phone Number: "+phonenumber+"|";
+    public long getPhoneNumber() {
+        return phoneNumber;
     }
 
+    public void setfirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
+    public void setlastName(String lastName) {
+        this.lastName = lastName;
+    }
 
+    public void setNumber(long phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    public static Comparator<ContactPerson> firstNameSorting = (contact1, contact2) -> {
+        String firstName = contact1.getfirstName();
+        String firstName2 = contact2.getfirstName();
+        return firstName.compareToIgnoreCase(firstName2);
+    };
 
+    public static Comparator<ContactPerson> CitySorting = (contact1, contact2) -> {
+        String CityName = contact1.getCity();
+        String CityName2 = contact2.getCity();
+        return CityName.compareToIgnoreCase(CityName2);
+    };
+    public String toString() {
+        return "Name: " + firstName + " " + lastName + ", Address: " + address + ", City: " + city + ",State: " + state + ",Phone: " + phoneNumber + ",Pin Code: " + zip + " | ";
+    }
 }
