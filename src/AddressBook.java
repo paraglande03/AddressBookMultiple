@@ -184,7 +184,7 @@ public class AddressBook {
     }
 
     public void searchContact() {
-        int choice;
+        int choice ;
         String city, state;
         System.out.println("\n\t 1.Search Contact in cities :" +
                 "\n\t 2. Search Contacts in State ");
