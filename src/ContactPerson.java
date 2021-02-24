@@ -18,10 +18,10 @@ public class ContactPerson {
         this.phonenumber=phonenumber;
     }
 // getters
-    public String getFname(){
+    public String getfname(){
         return fname;
     }
-    public String getLname(){
+    public String getlname(){
         return lname;
     }
 
@@ -45,11 +45,11 @@ public class ContactPerson {
         return zip;
     }
 
-    public void setFname(String fname) {
+    public void setfname(String fname) {
         this.fname = fname;
     }
 
-    public void setLname(String lname) {
+    public void setlname(String lname) {
         this.lname = lname;
     }
 
