@@ -37,23 +37,32 @@ public class AddressBook {
 
     }
     public static void addPerson(){
-        System.out.println("Enter First Name: ");
-        String fname=scan.next();
-        System.out.println("Enter Last Name: ");
-        String lname=scan.next();
-        System.out.println("Enter Address: ");
-        String address=scan.next();
-        System.out.println("Enter City: ");
-        String city=scan.next();
-        System.out.println("Enter State: ");
-        String state=scan.next();
-        System.out.println("Enter Pin Code");
-        long zip = scan.nextLong();
-        System.out.println("Enter Phone Number");
-        long phonenumber=scan.nextLong();
 
-        ContactPerson person1=new ContactPerson(fname,lname,address,city,state,zip,phonenumber);
-       people.add(person1);
+        System.out.println("Enter First Name: ");
+        String fname1=scan.next();
+        if(checkIfExist(fname1)){
+            System.out.println("contact already is there");
+
+        }
+        else {
+            System.out.println("Enter First Name: ");
+            String fname=scan.next();
+            System.out.println("Enter Last Name: ");
+            String lname = scan.next();
+            System.out.println("Enter Address: ");
+            String address = scan.next();
+            System.out.println("Enter City: ");
+            String city = scan.next();
+            System.out.println("Enter State: ");
+            String state = scan.next();
+            System.out.println("Enter Pin Code");
+            long zip = scan.nextLong();
+            System.out.println("Enter Phone Number");
+            long phonenumber = scan.nextLong();
+
+            ContactPerson person1 = new ContactPerson(fname, lname, address, city, state, zip, phonenumber);
+            people.add(person1);
+        }
 
 
     }
@@ -119,6 +128,27 @@ public class AddressBook {
                 }
             }
         }
+    }
+
+    public static boolean checkIfExist(String name){
+        int flag=0;
+        boolean res;
+        for(ContactPerson person: people){
+            if(person.getFname().equals(name)){
+                flag=1;
+                break;
+            }
+        }
+            if(flag==1){
+                 res=true;
+            }
+            else {
+                 res = false;
+            }
+            return res;
+
+
+
     }
 
 
