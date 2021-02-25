@@ -1,20 +1,32 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.security.Key;
+import java.util.*;
 
 public class AddressBook {
     static final int ZERO = 0, ONE = 1, TWO = 2;
+//    for single Addressbook
     public static List<ContactPerson> people = new ArrayList<>();
-    public static ArrayList<String> peopleCities = new ArrayList<>();
-    public static ArrayList<String> peopleStates = new ArrayList<>();
+//    for multiple adressbook adding arraylish in hashmap value
+    public static Map<String, List<ContactPerson>> addressBooks =new HashMap<>();
+
+
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
         int choice = 0;
         AddressBook contact = new AddressBook();
         System.out.println("----- Welcome to Address Book Program -----");
+
+
+
+
         while (choice < 9) {
             System.out.println(" ---------- Menu ---------- ");
+            System.out.println("Enter Addressbook name to continue");
+            String AddressBookName=scan.next();
+
+// giving name
+            addressBooks.put(AddressBookName,people);
+            System.out.println("Address book name : "+AddressBookName);
             System.out.println("\nEnter your choice " +
                     "\n\t 1.Add Contact " +
                     "\n\t 2.PrintContact " +
@@ -54,6 +66,7 @@ public class AddressBook {
                     break;
             }
         }
+
     }
 
     public void addPerson() {
@@ -152,6 +165,7 @@ public class AddressBook {
         if (people.isEmpty()) {
             System.out.println("There are no contact to print ");
         } else {
+            System.out.println(addressBooks.keySet());
             for (ContactPerson contact : people) {
                 System.out.println(contact);
             }
@@ -207,4 +221,6 @@ public class AddressBook {
             }
         }
     }
+    public static ArrayList<String> peopleCities = new ArrayList<>();
+    public static ArrayList<String> peopleStates = new ArrayList<>();
 }
